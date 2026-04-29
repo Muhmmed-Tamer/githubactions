@@ -5,7 +5,8 @@
 
 EXPECTED="Hello, Test!"
 
-OUTPUT=$(node -e "console.log(require('./src/app')('Test'))")
+# In src/test.sh
+OUTPUT=$(node -e "console.log(require('./app')('Test'))")
 
 # Note: Spaces are mandatory inside [ ] in Bash Muhmmed Tamer Muhmmed 
 if [ "$OUTPUT" == "$EXPECTED" ]; then
