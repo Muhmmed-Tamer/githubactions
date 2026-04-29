@@ -1,0 +1,22 @@
+name: psush-pr
+on: 
+  push: 
+    branches:
+      - master
+      - "release/**"
+    paths:
+      - "src/**"
+  pull_request:
+    branches:
+      - master
+      - "release/**"
+    
+
+jobs:
+  test:  #Name of Job
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v6.0.2
+      - name: Run tests
+        run: npm test
