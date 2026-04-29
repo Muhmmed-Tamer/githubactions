@@ -1,0 +1,10 @@
+on:
+  repository_dispatch: # Trigger from API Call [CURL - PostMan  - ]
+    types: [incident_report]
+    
+jobs:
+  handle-incident:
+    runs-on: ubuntu-latest
+    steps:
+      - name: print incident details
+        run: echo "Incident report reported"
