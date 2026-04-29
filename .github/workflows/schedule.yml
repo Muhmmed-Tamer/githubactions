@@ -1,0 +1,10 @@
+name: test schedulre
+on: 
+  schedule:
+    - cron: "0 0 * * *"
+jobs:
+  test_schedule:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print Message
+        run: echo "Running the scheduled task" 
