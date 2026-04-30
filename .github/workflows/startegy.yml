@@ -1,0 +1,16 @@
+on:
+  workflow_dispatch:
+jobs:
+  startegy_job:
+    strategy:
+      fail-fast: false # Continue If Job Fails
+      max-parallel: 3  # Number Of Jobs That Run In Parallel
+      matrix:
+        os: [ubuntu-latest , windows-latest , macos-latest]
+        node_version: [14.x , 15.x , 16.x]
+    runs-on: ${{matrix.os}}
+    steps:
+      - uses: actions/setup-node@v6.4.0 # Setup Nodejs On Current Runner
+        with:
+          node-version: ${{matrix.node_version}}
+          
